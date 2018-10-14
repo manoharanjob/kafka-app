@@ -1,0 +1,15 @@
+app\kafka\model\PriceItem.class
+app\spring\AppInit.class
+app\spring\controller\ReceiverController.class
+app\kafka\producer\KafkaProducerSample.class
+app\kafka\biserializer\BiSerializer.class
+app\kafka\main\RunProducer.class
+app\kafka\constants\KafkaConfig.class
+app\kafka\main\RunConsumer.class
+app\spring\AppConfig.class
+app\kafka\consumer\KafkaConsumerSample.class
+app\kafka\consumer\KafkaReceiver.class
+app\kafka\producer\KafkaSender.class
+app\kafka\consumer\MsgKafka.class
+app\kafka\partitioner\CustomPartitioner.class
+app\spring\controller\SenderController.class
