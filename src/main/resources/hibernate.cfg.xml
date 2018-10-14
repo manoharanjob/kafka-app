@@ -19,10 +19,10 @@
 		<property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
 
 		<!-- Mapping With Model Class Containing Annotations -->
-		<mapping class="app.kafka.model.PriceItem" />
-		<mapping class="app.kafka.model.PriceItemParam" />
-		<mapping class="app.kafka.model.PriceList" />
-		<mapping class="app.kafka.model.PriceAsgn" />
-		<mapping class="app.kafka.model.RsRc" />
+		<mapping class="app.kafka.dao.model.PriceItem" />
+		<mapping class="app.kafka.dao.model.PriceItemParam" />
+		<mapping class="app.kafka.dao.model.PriceList" />
+		<mapping class="app.kafka.dao.model.PriceAsgn" />
+		<mapping class="app.kafka.dao.model.RsRc" />
 	</session-factory>
 </hibernate-configuration>
