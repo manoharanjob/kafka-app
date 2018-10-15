@@ -17,6 +17,10 @@ public class PriceListDAO {
 		HibernateDAO.save(object);
 	}
 
+	public void saveOrUpdate(PriceList object) {
+		HibernateDAO.saveOrUpdate(object);
+	}
+	
 	public List<PriceList> findByPriceListId(String priceListId) {
 		return HibernateDAO.find("FROM PriceList WHERE priceListId=?", new Object[] { priceListId });
 	}

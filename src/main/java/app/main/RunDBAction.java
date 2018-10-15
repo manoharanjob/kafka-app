@@ -11,7 +11,7 @@ public class RunDBAction {
 	public static void main(String[] args) {
 		PriceItemDAO p = new PriceItemDAO();
 
-		PriceItem item = new PriceItem("1", "Item 1", "PE", "New", "Item text", new Date());
+		PriceItem item = new PriceItem("1", "Item 1", "PE", "Pending", "Item text", new Date());
 		
 		p.save(item);
 		

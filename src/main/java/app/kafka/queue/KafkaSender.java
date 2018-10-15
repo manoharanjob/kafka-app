@@ -33,7 +33,7 @@ public class KafkaSender {
 		return new KafkaProducer<String, String>(props);
 	}
 
-	public static void sendMessage(String key, String msg) {
+	public static synchronized void sendMessage(String key, String msg) {
 		if (producer != null) {
 			final ProducerRecord<String, String> record = new ProducerRecord<String, String>(KafkaConfig.TOPIC_NAME,
 					key, msg);

@@ -30,7 +30,7 @@ public class CronJobScheduler {
 
 	@PostConstruct
 	public void createSchedule() throws SchedulerException {
-		 JobKey jobKey = new JobKey("KAFKA_JOB", "DATA_PUSH_TO_KAFKA_PRODUCER");
+		 JobKey jobKey = new JobKey(KafkaConfig.CRON_JOB_KEY_NAME, KafkaConfig.CRON_JOB_GROUP_NAME);
 		 Map<String, Object> jobMap = new HashMap<String, Object>();
 	     jobMap.put("cronjobservice", cronJobService);
 	     JobDataMap dataMap = new JobDataMap(jobMap)
@@ -43,7 +43,7 @@ public class CronJobScheduler {
 		 
 		 Trigger trigger = TriggerBuilder.newTrigger()
 	                .forJob(jobDetail)
-	                .withIdentity("trigger-" + "EmailJob", "DATA_PUSH_TO_KAFKA_PRODUCER")
+				    .withIdentity("trigger-" + KafkaConfig.CRON_JOB_KEY_NAME, KafkaConfig.CRON_JOB_GROUP_NAME)
 	        		.startNow()
 	        		.withSchedule(CronScheduleBuilder.cronSchedule(KafkaConfig.CRON_EXPRESSION))
 	                .build();

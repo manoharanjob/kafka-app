@@ -22,20 +22,20 @@ import app.kafka.dao.model.RsRc;
 @RestController
 public class DatabaseController {
 
-	@Autowired()
+	@Autowired
 	PriceItemDAO priceItemDAO;
-	@Autowired()
+	@Autowired
 	PriceItemParamDAO priceItemParamDAO;
-	@Autowired()
+	@Autowired
 	PriceListDAO priceListDAO;
-	@Autowired()
+	@Autowired
 	PriceAsgnDAO priceAsgnDAO;
-	@Autowired()
+	@Autowired
 	RsRcDAO rsRcDAO;
 
 	@GetMapping(value = "/priceitem/save")
 	public @ResponseBody String priceItemSave() {
-		PriceItem priceItem = new PriceItem("1", "Item 1", "PE", "New", "Item text", new Date());
+		PriceItem priceItem = new PriceItem("1", "Item 1", "PE", "Pending", "Item text", new Date());
 		priceItemDAO.save(priceItem);
 
 		return "Message Saved: " + priceItem;
@@ -51,7 +51,7 @@ public class DatabaseController {
 	@GetMapping(value = "/priceitemparam/save")
 	public @ResponseBody String priceItemParamSave() {
 		PriceItemParam priceItemParam = new PriceItemParam("PriceParam", "Required", "Priority", new Date(), new Date(),
-				"dispOrd", "New", new Date());
+				"dispOrd", "Pending", new Date());
 		priceItemParamDAO.save(priceItemParam);
 
 		return "Message Saved: " + priceItemParam;
@@ -67,7 +67,7 @@ public class DatabaseController {
 	@GetMapping(value = "/pricelist/save")
 	public @ResponseBody String priceListSave() {
 		PriceList priceList = new PriceList("priceListId", "priceListExtId", "priceListName", "priceListStatus",
-				new Date(), new Date(), "priceListType", "New", new Date());
+				new Date(), new Date(), "priceListType", "Pending", new Date());
 		priceListDAO.save(priceList);
 
 		return "Message Saved: " + priceList;

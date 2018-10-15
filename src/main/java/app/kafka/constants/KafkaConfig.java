@@ -23,4 +23,8 @@ public interface KafkaConfig {
 	public static Integer POLL_TIMEOUT = 3000;
 	
 	public static String CRON_EXPRESSION = "0 0/1 * 1/1 * ? *";
+	
+	public static String CRON_JOB_KEY_NAME = "KAFKA_JOB";
+	
+	public static String CRON_JOB_GROUP_NAME = "DATA_PUSH_TO_KAFKA_PRODUCER";
 }

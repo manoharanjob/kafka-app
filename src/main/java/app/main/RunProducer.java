@@ -15,7 +15,7 @@ public class RunProducer {
 		KafkaSender.sendMessage("Key", "Text Message");
 		
 		// Sample Custom object
-		PriceItem item = new PriceItem("1", "Item 1", "PE", "New", "Item text", new Date());
+		PriceItem item = new PriceItem("1", "Item 1", "PE", "Pending", "Item text", new Date());
 		String msg = BiSerializer.serialize(item);
 		KafkaSender.sendMessage("Key", msg);
 	}

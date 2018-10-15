@@ -44,7 +44,7 @@ public class KafkaReceiver {
 		return consumer;
 	}
 
-	public static List receiveMessage() {
+	public static synchronized List receiveMessage() {
 		List list = new ArrayList();
 		if (consumer != null) {
 			final ConsumerRecords<String, String> consumerRecords = consumer.poll(KafkaConfig.POLL_TIMEOUT);

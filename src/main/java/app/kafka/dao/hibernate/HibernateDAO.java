@@ -66,6 +66,23 @@ public class HibernateDAO {
 		}
 	}
 
+	public static <T> void saveOrUpdate(T object) {
+		Session session = null;
+		try {
+			session = getSession();
+			session.beginTransaction();
+
+			session.saveOrUpdate(object);
+
+			session.getTransaction().commit();
+		} catch (Exception sqlException) {
+			rollback(session);
+			sqlException.printStackTrace();
+		} finally {
+			closeSession(session);
+		}
+	}
+
 	@SuppressWarnings("unchecked")
 	public static <T> List<T> find(String query) {
 		Session session = null;
